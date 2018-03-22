@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class formContact extends Component {
     constructor() {
@@ -36,6 +37,10 @@ class formContact extends Component {
             </div>
         );
     }
+}
+
+formContact.propTypes = {
+    addEmail: PropTypes.func
 }
 
 export default formContact;

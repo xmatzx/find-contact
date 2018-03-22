@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FaUser, FaMapMarker } from 'react-icons/lib/fa';
 
 class Contact extends Component {
@@ -33,6 +34,10 @@ class Contact extends Component {
             </div >
         );
     }
+}
+
+Contact.propTypes = {
+    contact: PropTypes.object
 }
 
 export default Contact;
