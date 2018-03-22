@@ -25,8 +25,8 @@ class formContact extends Component {
     render() {
         return (
             <div className="formContact">
-                <h3>Find contact details</h3>
-                <form onSubmit={this.handleSubmit.bind(this)} >
+                <h3>Find contact</h3>
+                <form style={{padding: 10}} onSubmit={this.handleSubmit.bind(this)} >
                     <div className="form-group">
                         <label htmlFor="email">Enter email</label>
                         <input id="email" type="text" ref="email" name="email" placeholder="Eq. example@email.com" className="form-control" />

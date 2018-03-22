@@ -10,7 +10,7 @@ class App extends Component {
         }
     }
 
-    getContact(email) {
+    handleGetContact(email) {
         const api_key = '';
 
         fetch('https://api.fullcontact.com/v3/person.enrich', {
@@ -21,14 +21,15 @@ class App extends Component {
             body: JSON.stringify({
                 'email': email
             })
-        }).then(function (res) {
-            return res.json();
-        }).then(data => this.setState({ contact: data }))
-            .catch(e => console.log('error', e));
-    }
-
-    handleGetContact(email) {
-        this.getContact(email);
+        }).then(results => {
+            return results.json()
+        }).then(data => {
+            if (data.status === 404 || data.status === 202) {
+                this.setState({contact: {}});
+            } else {
+                this.setState({contact: data});
+            }
+        }).catch(e => console.log('error', e));
     }
 
     render() {
@@ -36,11 +37,11 @@ class App extends Component {
             <div className='App'>
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        <div className='col-4'>
-                            <Contact contact={this.state.contact} />
-                        </div>
-                        <div className='col-4'>
+                        <div className='col-md-4 mb-2'>
                             <FormContact addEmail={this.handleGetContact.bind(this)} />
+                        </div>
+                        <div className='col-md-4'>
+                            <Contact contact={this.state.contact} />
                         </div>
                     </div>
                 </div>

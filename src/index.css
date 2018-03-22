@@ -7,27 +7,32 @@ body {
 .App {
     width: 100%;
     min-height: 100vh;
-    /* display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex; */
-
-    /* flex-wrap: wrap;
-    justify-content: center;
-    align-items: center; */
     padding: 15px;
     background: #f2f2f2;
 }
 
-.Contact {
-    background-image: url('/images/bg-01.jpg');
-}
-
-.formContact {
-    border: solid #f7f7f9;
-}
-
 h1, h2, h3 {
     text-align: center;
+}
+
+.formContact, .Contact {
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(214, 218, 219);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.avatar {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    width: 110px;
+    flex: 0 0 110px;
+    background-image: url(https://d2ojpxxtu63wzl.cloudfront.net/static/dd2c4f2…_0901c69…);
+    justify-content: center;
+    display: flex;
+    background-position: 50% center;
+    border-radius: 50%;
+    background-size: cover;
+    height: 110px;
 }
