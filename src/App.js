@@ -11,7 +11,7 @@ class App extends Component {
     }
 
     handleGetContact(email) {
-        const api_key = '';
+        const api_key = process.env.REACT_APP_API_KEY;
 
         fetch('https://api.fullcontact.com/v3/person.enrich', {
             method: 'post',
